@@ -31,8 +31,7 @@ class Dtable extends StatelessWidget {
         ),
         columns: [
           DataColumn(label: Text("State/UT")),
-          DataColumn(label: Text("Confirmed"),numeric: true,onSort: (i,b){
-          }),
+          DataColumn(label: Text("Confirmed"),numeric: true,),
           DataColumn(label: Text("Active"),numeric: true),
           DataColumn(label: Text("Recovered"),numeric:true),
           DataColumn(label: Text("Deceased"),numeric: true)
@@ -82,7 +81,7 @@ class Dtable extends StatelessWidget {
     return DataRow(
       
           cells: [
-          DataCell(Text("${album[i].state}"),),
+          DataCell(Text("${album[i].state}")),
           DataCell(Text("${album[i].confirmed}")),
           DataCell(Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -116,54 +115,3 @@ class Dtable extends StatelessWidget {
   }
 }
 
-// import 'dart:convert';
-// import 'package:flutter/foundation.dart';
-// import 'package:flutter/material.dart';
-// import 'package:http/http.dart' as http;
-
-// Future<List<Album>> fetchAlbum(http.Client client) async {
-//   final response =
-//       await client.get(Uri.parse('https://api.covid19india.org/data.json'));
-  
-//   return compute(parsePhotos, response.body);
-  
-// }
-// List<Album>parsePhotos(String responsebody){
-//  final parsed = jsonDecode(responsebody)['cases_time_series'].cast<Map<String,dynamic>>();
-//  return parsed.map<Album>((json)=>Album.fromJson(json)).toList();
-// }
-// class Album {
-
-//   final String totalconfirmed;
-  
-//   Album({
-//     required this.totalconfirmed,
-  
-//   });
-
-//   factory Album.fromJson(Map<String, dynamic> json) {
-//     return Album(
-    
-//       totalconfirmed: json['totalconfirmed']as String,
-      
-//     );
-//   }
-// }
-// class Photol2 extends StatelessWidget{
-//   Color red = Color(0xffff0000);
-//   Color green = Color(0xff00cc00);
-//   Color blue = Color(0xff03A1FE);
-//   Color grey = Color(0xff8B8B8B);
-//   Color hexcolor = Color(0xff1C1935);
-  
-
-//   final List<Album>album;
-//   Photol2({Key?key,required this.album}):super(key: key);
-
- 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: Text("${album[album.length-1].totalconfirmed}"),
-//     );
-//   }}

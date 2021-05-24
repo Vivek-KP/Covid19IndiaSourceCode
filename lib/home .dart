@@ -176,7 +176,7 @@ late AnimationController controller;
                           children: [
                              Row(
                                children: [
-                                 Icon(Icons.shield,color:vac),
+                                 Icon(Icons.shield_outlined,color:vac),
                                  SizedBox(width: 1),
                                  Text("Vaccinated",style: TextStyle(color:vac,fontSize: 16),),
                                ],
