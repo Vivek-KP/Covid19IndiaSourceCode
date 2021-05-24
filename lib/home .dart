@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:myweb/extra.dart';
 import 'data.dart';
 import 'table.dart';
 import 'package:http/http.dart' as http;
@@ -23,7 +24,7 @@ late AnimationController controller;
   Color red = Color(0xffff0000);
   Color font = Color(0xff979A9C);
   Color cov = Color(0xff0501FB );
-  
+  final Color vac = Color(0xffFC6802);
 
 
   @override
@@ -123,10 +124,9 @@ late AnimationController controller;
                 children: [
                   Column(
                     children: [
-                  
                         Container(
                         width: MediaQuery.of(context).size.width*1,
-                         height: MediaQuery.of(context).size.height*.12,
+                         height: MediaQuery.of(context).size.height*.14,
                          decoration: BoxDecoration(
                 color:hexcolor,
                 boxShadow: [
@@ -139,13 +139,13 @@ late AnimationController controller;
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(10))
               ),
               child:Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [
-             Text("India",style:TextStyle(
+             Text("INDIA",style:TextStyle(
                            color: red,
                            fontWeight: FontWeight.bold,
                            fontSize: 26,
@@ -172,6 +172,18 @@ late AnimationController controller;
                         
                       ],
                     ),
+                     Column(
+                          children: [
+                             Row(
+                               children: [
+                                 Icon(Icons.shield,color:vac),
+                                 SizedBox(width: 1),
+                                 Text("Vaccinated",style: TextStyle(color:vac,fontSize: 16),),
+                               ],
+                             ),
+                            Distested()
+                          ],
+                        ),
                   ],
                 ),
               )
@@ -213,6 +225,7 @@ late AnimationController controller;
               ),
             ),
           ),
+          
         ],
       ),
       ),
@@ -220,44 +233,6 @@ late AnimationController controller;
   
   }
 
-  // Column buttons(IconData symbol,String name) {
-  //   return Column(
-  //               children: [
-  //                 Container(
-  //                   margin: EdgeInsets.only(top: 32),
-  //                   child: Material(
-  //                 borderRadius: BorderRadius.all(Radius.circular(10)),
-            
-  //                     color: Colors.black87,
-  //                     child:InkWell(
-  //                       hoverColor: Colors.blue,
-  //                       onTap: (){
-                        
-  //                       },
-  //                        child: 
-  //                        Padding(
-  //                          padding: const EdgeInsets.all(12.0),
-  //                          child: Icon(symbol,
-  //                          color: Colors.white,
-  //                          )
-                           
-  //                          ,
-  //                        ),
-  //                     )
-  //                   ),
-  //                 ),
-  //                 Padding(
-  //                   padding: const EdgeInsets.only(top: 3),
-  //                   child: Text(name,style: TextStyle(
-  //                     color: Colors.white
-  //                   ),),
-  //                 )
-  //               ],
-         
-  //             );
-
-              
-  }
-
+}
 
 

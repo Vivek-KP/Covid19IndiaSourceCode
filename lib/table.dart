@@ -80,8 +80,9 @@ class Dtable extends StatelessWidget {
 
   DataRow Datavaluesin(int i) {
     return DataRow(
+      
           cells: [
-          DataCell(Text("${album[i].state}")),
+          DataCell(Text("${album[i].state}"),),
           DataCell(Text("${album[i].confirmed}")),
           DataCell(Column(
             mainAxisAlignment: MainAxisAlignment.center,
